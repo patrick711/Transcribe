@@ -2,14 +2,12 @@
 // Setting up some variables...
 
 include "./pdo.php";
-
 require_once('config.php');
 
 $stylesheet = "survey.css";
 $title = $meta["title"];
-
 $header = $meta['header'];
-
+set_time_limit(60);
 ?>
 <!DOCTYPE html>
 <html>
