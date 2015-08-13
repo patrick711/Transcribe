@@ -1,49 +1,21 @@
 <?php
 // Setting up some variables...
-$personal = array();
-$social_media = array();
-$work_history = array();
-$education = array();
-$skills = array();
-$awards = array();
-$language = array();
-$settings = array();
+
 $QName = "Section1";
 
 include "./pdo.php";
 
 require_once('config.php');
 
-/* if (isset($settings['style']) && $settings['style'] == "dark")
-{
-	$stylesheet = 'dark.css';
-}
-else if (isset($settings['style']) && $settings['style'] == "light")
-{ */
-	$stylesheet = 'landesa.css';
-/*}
- else if (isset($settings['style']) && $settings['style'] == "printable")
-{
-	$stylesheet = 'printable.css';
-}
-else
-{
-	$stylesheet = 'dark.css';
-} */
 
-if (isset($settings['lang']) && file_exists("lang/" . $settings['lang']) . ".php")
-{
-	$langfile = "lang/" . $settings['lang'] . ".php";
-}
-else
-{
-	$langfile = "lang/en.php";
-}
-require_once($langfile);
+$stylesheet = "survey.css";
+$title = $meta["title"];
+$header = $meta["header"];
+
 ?>
 <?php
 //**************************
-// Landesa Survey Transcription Page
+// Survey Transcription Page
 // Patrick S Chen 2014
 //**********************************
 
@@ -577,16 +549,16 @@ else
 <html>
 
 <head>
-	<title><?php echo $lang['title']; ?></title>
+	<title><?php echo $title; ?></title>
 	<link rel="stylesheet" type="text/css" href="<?php echo $stylesheet; ?>" />
-	<link rel="stylesheet" href="css/printable.css" type="text/css" media="print" />
+
 </head>
 <body>
 
 	<div id="content">
 	
 		<div id="header">
-			<span class="header_name"><?php echo $lang['header']; ?></span><br />
+			<span class="header_name"><?php echo $header; ?></span><br />
 			
 			<hr><br>
 		</div>
