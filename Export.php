@@ -9,7 +9,7 @@ $stylesheet = "survey.css";
 $title = $meta["title"];
 
 $header = $meta["header"];
-set_time_limit(60);
+set_time_limit(360);
 
 ?>
 <?php
@@ -77,21 +77,23 @@ set_time_limit(60);
 			$txt='';
 			foreach( $row as $row2 => $row2_value)
 			{
-				//$cols= $cols.'<th>'.$row2.'</th>';
-				//$rows = $rows.'<td>'.$row2_value.'</td>';
+				$cols= $cols.'<th>'.$row2.'</th>';
+				$rows = $rows.'<td>'.$row2_value.'</td>';
 				$txt = $txt.$row2_value.'|';
 				//echo $row2.' : '.$row2_value;
 				//print_r($row);
 				//echo '<br>';
 			}
-			//$rows = $rows.'</tr>';
+			$rows = $rows.'</tr>';
+			
+			
 			$txt = str_replace("\r\n",'',$txt);
 			//$txt = str_replace("\n",'',$txt);
 			$txt = $txt."\n";
 			fwrite($myfile, $txt);
 			$counter++;
 		}
-		//$cols = "<table cellpadding='1' border='1'>".$cols.'</tr>'.$rows.'</table>';
+		$table = "<table cellpadding='2' border='1'>".$cols.'</tr>'.$rows.'</table>';
 	}
 	fclose($myfile);
 	$html="Export Complete: ".$counter." records exported.";

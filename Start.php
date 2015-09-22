@@ -71,13 +71,10 @@ $header = $meta['header'];
 				if ($_POST[random] !='')
 				{
 						$rand = $_POST[random].';';
-						//if ($_POST['Start'] == '')
-						//{
-						//	$list = $list.$rand.',';
-						//	}
+						
 				}
 				
-				//if ($_POST[hrandom] != '')
+				
 				if (1==2)
 				{
 					if ($rand == '')
